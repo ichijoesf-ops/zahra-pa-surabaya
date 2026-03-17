@@ -14,23 +14,39 @@
             --pa-white-overlay: rgba(255, 255, 255, 0.95);
         }
         /* Tambahkan di bawah :root atau di dalam tag <style> */
+/* GANTI DENGAN INI */
 .title-safira {
     font-family: 'Merriweather', serif;
-    font-size: 2.5rem;
+    /* Menggunakan clamp untuk font-size dinamis */
+    font-size: clamp(20px, 6vw, 2.5rem); 
     color: var(--pa-gold);
-    letter-spacing: 4px;
+    letter-spacing: clamp(1px, 0.5vw, 4px);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     margin: 0;
+    line-height: 1.1;
+    white-space: nowrap; /* Mencegah teks turun ke bawah */
 }
 
 .subtitle-safira {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
+    font-size: clamp(8px, 1.8vw, 0.8rem);
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: #ffffff;
+    
+    /* Gunakan warna emas terang langsung di sini, bukan var(--pa-gold) */
+    color: #FFD700; 
+    
+    /* Garis luar (outer) putih yang kita buat sebelumnya */
+    -webkit-text-stroke: 0.5px #ffffff; 
+    
     margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.instansi-safira {
+     font-size: clamp(8px, 1.5vw, 0.875rem); /* Ukuran dinamis untuk teks Pengadilan */
+     white-space: nowrap;
 }
         body { 
             background-color: var(--pa-soft-green-bg); 
@@ -173,15 +189,15 @@
             ﷽
         </p>
         
-        <div class="row align-items-center justify-content-center">
-            <div class="col-auto">
-                <img src="logo-pa.png" alt="Logo PA" style="height: 105px; width: auto; filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.4));">
+        <div class="d-flex align-items-center justify-content-center flex-nowrap" style="overflow: hidden; max-width: 100%; padding: 0 10px;">
+            <div class="pe-3 pe-md-4">
+                <img src="logo-pa.png" alt="Logo PA" style="height: clamp(50px, 15vw, 105px); width: auto; filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.4));">
             </div>
             
-            <div class="col-auto text-start border-start border-white border-2 px-4 mx-2">
+            <div class="text-start border-start border-white border-2 ps-3 ps-md-4">
                 <h1 class="title-safira">SAFIRA</h1>
                 <p class="subtitle-safira">SISTEM AKSES INFORMASI HITUNG BIAYA PERKARA</p>
-                <p class="mb-0 small text-white-50">Pengadilan Agama Surabaya Kelas IA</p>
+                <p class="mb-0 text-white-80 instansi-safira">Pengadilan Agama Surabaya Kelas IA</p>
             </div>
         </div>
     </div>
